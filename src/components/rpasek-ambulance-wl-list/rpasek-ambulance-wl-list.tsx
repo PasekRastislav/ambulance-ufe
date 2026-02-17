@@ -1,7 +1,5 @@
 import { Component, Host, h } from '@stencil/core';
-import '@material/web/list/list'
-import '@material/web/list/list-item'
-import '@material/web/icon/icon'
+
 @Component({
   tag: 'rpasek-ambulance-wl-list',
   styleUrl: 'rpasek-ambulance-wl-list.css',
