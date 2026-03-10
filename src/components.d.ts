@@ -7,6 +7,8 @@
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
     interface RpasekAmbulanceWlApp {
+        "ambulanceId": string;
+        "apiBase": string;
         /**
           * @default ""
          */
@@ -16,6 +18,8 @@ export namespace Components {
         "entryId": string;
     }
     interface RpasekAmbulanceWlList {
+        "ambulanceId": string;
+        "apiBase": string;
     }
 }
 export interface RpasekAmbulanceWlEditorCustomEvent<T> extends CustomEvent<T> {
@@ -75,6 +79,8 @@ declare global {
 }
 declare namespace LocalJSX {
     interface RpasekAmbulanceWlApp {
+        "ambulanceId"?: string;
+        "apiBase"?: string;
         /**
           * @default ""
          */
@@ -85,20 +91,28 @@ declare namespace LocalJSX {
         "onEditor-closed"?: (event: RpasekAmbulanceWlEditorCustomEvent<string>) => void;
     }
     interface RpasekAmbulanceWlList {
+        "ambulanceId"?: string;
+        "apiBase"?: string;
         "onEntry-clicked"?: (event: RpasekAmbulanceWlListCustomEvent<string>) => void;
     }
 
     interface RpasekAmbulanceWlAppAttributes {
         "basePath": string;
+        "apiBase": string;
+        "ambulanceId": string;
     }
     interface RpasekAmbulanceWlEditorAttributes {
         "entryId": string;
+    }
+    interface RpasekAmbulanceWlListAttributes {
+        "apiBase": string;
+        "ambulanceId": string;
     }
 
     interface IntrinsicElements {
         "rpasek-ambulance-wl-app": Omit<RpasekAmbulanceWlApp, keyof RpasekAmbulanceWlAppAttributes> & { [K in keyof RpasekAmbulanceWlApp & keyof RpasekAmbulanceWlAppAttributes]?: RpasekAmbulanceWlApp[K] } & { [K in keyof RpasekAmbulanceWlApp & keyof RpasekAmbulanceWlAppAttributes as `attr:${K}`]?: RpasekAmbulanceWlAppAttributes[K] } & { [K in keyof RpasekAmbulanceWlApp & keyof RpasekAmbulanceWlAppAttributes as `prop:${K}`]?: RpasekAmbulanceWlApp[K] };
         "rpasek-ambulance-wl-editor": Omit<RpasekAmbulanceWlEditor, keyof RpasekAmbulanceWlEditorAttributes> & { [K in keyof RpasekAmbulanceWlEditor & keyof RpasekAmbulanceWlEditorAttributes]?: RpasekAmbulanceWlEditor[K] } & { [K in keyof RpasekAmbulanceWlEditor & keyof RpasekAmbulanceWlEditorAttributes as `attr:${K}`]?: RpasekAmbulanceWlEditorAttributes[K] } & { [K in keyof RpasekAmbulanceWlEditor & keyof RpasekAmbulanceWlEditorAttributes as `prop:${K}`]?: RpasekAmbulanceWlEditor[K] };
-        "rpasek-ambulance-wl-list": RpasekAmbulanceWlList;
+        "rpasek-ambulance-wl-list": Omit<RpasekAmbulanceWlList, keyof RpasekAmbulanceWlListAttributes> & { [K in keyof RpasekAmbulanceWlList & keyof RpasekAmbulanceWlListAttributes]?: RpasekAmbulanceWlList[K] } & { [K in keyof RpasekAmbulanceWlList & keyof RpasekAmbulanceWlListAttributes as `attr:${K}`]?: RpasekAmbulanceWlListAttributes[K] } & { [K in keyof RpasekAmbulanceWlList & keyof RpasekAmbulanceWlListAttributes as `prop:${K}`]?: RpasekAmbulanceWlList[K] };
     }
 }
 export { LocalJSX as JSX };
