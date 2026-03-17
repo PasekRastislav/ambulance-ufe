@@ -55,6 +55,7 @@ export class RpasekAmbulanceWlApp {
       <Host>
         { element === "editor"
         ? <rpasek-ambulance-wl-editor entry-id={entryId}
+            ambulance-id={this.ambulanceId} api-base={this.apiBase}
             oneditor-closed={ () => navigate("./list")} >
           </rpasek-ambulance-wl-editor>
         : <rpasek-ambulance-wl-list  ambulance-id={this.ambulanceId} api-base={this.apiBase}
